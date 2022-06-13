@@ -32,7 +32,7 @@ namespace EstudioContable.Negocio
         }
         public List<Empresa> GetListaEmpresa()
         {
-            List<Empresa> list = _empresaDatos.TraerTodosEmpresa();
+            List<Empresa> list = _empresaDatos.Traer(892310);
 
             return list;
         }
@@ -54,12 +54,9 @@ namespace EstudioContable.Negocio
         #region Métodos que devuelven Objetos
 
 
-        public Empresa TraerEmpresa(Empresa empresa)
-        {
-            // validar cliente no nulo
+     
 
-            return _empresaDatos.TraerPorIdEmpresa(empresa._id);
-        }
+        
 
         public Categoria TraerCategoria(Categoria categoria)
         {
@@ -144,7 +141,7 @@ namespace EstudioContable.Negocio
         #endregion
 
         #region Métodos de Altas
-        public void AltaEmpleado(int id, int idCategoria, int idEmpresa, string nombre, string apellido, int cuil, string fnac, string fechaAlta)
+        public void AltaEmpleado(int id, int idCategoria, int idEmpresa, string nombre, string apellido, int cuil, DateTime fnac, DateTime fechaAlta)
         {
             Empleado empleado = new Empleado();
             empleado._id = id;
@@ -164,7 +161,7 @@ namespace EstudioContable.Negocio
             if (!transaction.IsOk)
                 throw new Exception(transaction.Error);
         }
-        public void AltaEmpresa(string razonSocial, int cuit, string domicilio, string fechaAlta, int usuario, int id)
+        public void AltaEmpresa(string razonSocial, int cuit, string domicilio, DateTime fechaAlta, int usuario, int id)
         {
             Empresa empresa = new Empresa();
             empresa._razonSocial = razonSocial;
@@ -199,7 +196,7 @@ namespace EstudioContable.Negocio
 
         }
                        
-        public void AltaLiquidacion(int idEmpleado, int periodo, string codigoTransferencia, double bruto, double descuentos, int id, string fechaAlta)
+        public void AltaLiquidacion(int idEmpleado, int periodo, string codigoTransferencia, double bruto, double descuentos, int id, DateTime fechaAlta)
         {
             Liquidacion liquidacion = new Liquidacion();
             liquidacion._idEmpleado = idEmpleado;
