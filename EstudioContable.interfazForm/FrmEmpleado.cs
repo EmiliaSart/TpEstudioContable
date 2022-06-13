@@ -34,8 +34,8 @@ namespace EstudioContable.interfazForm
                 string nombre = _txtNombre.Text;
                 string apellido = _txtApellido.Text;
                 int cuil = Convert.ToInt32(_txtCuil.Text);
-                string fechaNacimiento = _txtFechaNacimiento.Text;
-                string fechaAlta = _txtFechaAlta.Text;
+                DateTime fechaNacimiento = Convert.ToDateTime(_txtFechaNacimiento.Text);
+                DateTime fechaAlta = Convert.ToDateTime(_txtFechaAlta.Text);
 
                 _estudioNegocio.AltaEmpleado(id, idCategoria, idEmpresa, nombre, apellido, cuil, fechaNacimiento, fechaAlta);
 

@@ -55,7 +55,7 @@ namespace EstudioContable.interfazForm
                 string codigoTransferencia = _txtCodigoTransferencia.Text;
                 double bruto = Convert.ToInt32(_txtBruto.Text);
                 double descuentos = Convert.ToInt32(_txtDescuentos.Text);
-                string fechaAlta = _txtFechaAlta.Text;
+                DateTime fechaAlta = Convert.ToDateTime(_txtFechaAlta.Text) ;
 
                 _estudioNegocio.AltaLiquidacion( idEmpleado, periodo, codigoTransferencia, bruto, descuentos, id, fechaAlta);
 
