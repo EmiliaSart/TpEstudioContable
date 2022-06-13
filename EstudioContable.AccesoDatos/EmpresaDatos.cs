@@ -17,19 +17,20 @@ namespace EstudioContable.AccesoDatos
         //Empresa
         public List<Empresa> TraerTodosEmpresa()
         {
-            string json2 = WebHelper.Get("EstudioContable/Empresas/");
+            string json2 = WebHelper.Get("EstudioContable/Empresas");
             List<Empresa> resultado = MapList(json2);
             return resultado;
         }
 
-        public Empresa TraerPorIdEmpresa(int id)
+        public List<Empresa> Traer(int registro)
         {
-            string json2 = WebHelper.Get("EstudioContable/Empresa/" + id.ToString());
-            Empresa resultado = MapObj(json2);
+            string json2 = WebHelper.Get("EstudioContable/Empresas/" + registro.ToString()); // trae un texto en formato json de una web
+            List<Empresa> resultado = MapList(json2);
             return resultado;
         }
 
-        private List<Empresa> MapList(string json)
+
+        public List<Empresa> MapList(string json)
         {
             List<Empresa> lst = JsonConvert.DeserializeObject<List<Empresa>>(json); // deserializacion
             return lst;
@@ -37,7 +38,7 @@ namespace EstudioContable.AccesoDatos
 
 
 
-        private Empresa MapObj(string json)
+        public Empresa MapObj(string json)
         {
             Empresa lst = JsonConvert.DeserializeObject<Empresa>(json); // deserializacion
             return lst;
@@ -66,16 +67,17 @@ namespace EstudioContable.AccesoDatos
             return lst;
         }
 
-        private NameValueCollection ReverseMapEmpresa(Empresa empresa)
+        public NameValueCollection ReverseMapEmpresa(Empresa empresa)
         {
             NameValueCollection n = new NameValueCollection();
 
             n.Add("razonSocial", empresa._razonSocial);
             n.Add("cuit", empresa._cuit.ToString());
             n.Add("domicilio", empresa._domicilio);
-            n.Add("fechaAlta", empresa._fechaAlta);
+            n.Add("fechaAlta", empresa._fechaAlta.ToString());
             n.Add("usuario", empresa._usuario.ToString());
             n.Add("id", empresa._id.ToString());
+            n.Add("Usuario", "892310");
 
             return n;
         }

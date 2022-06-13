@@ -73,7 +73,7 @@ namespace EstudioContable.AccesoDatos
             n.Add("Bruto", liquidacion._bruto.ToString());
             n.Add("Descuentos", liquidacion._descuentos.ToString());
 
-            n.Add("FechaAlta", liquidacion._fechaAlta);
+            n.Add("FechaAlta", liquidacion._fechaAlta.ToString());
             n.Add("id", liquidacion._id.ToString());
 
             return n;

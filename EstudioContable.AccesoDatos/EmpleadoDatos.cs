@@ -80,7 +80,7 @@ namespace EstudioContable.AccesoDatos
             n.Add("fechaNacimiento", empleado._fechaNacimiento.ToString());
             n.Add("fechaAlta", empleado._fechaAlta.ToString());
             n.Add("id", empleado._id.ToString());
-            n.Add("Usuario", "888333");
+            
             Console.WriteLine(n);
             return n;
         }
