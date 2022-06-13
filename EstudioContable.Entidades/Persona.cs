@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace EstudioContable.Entidades
 {
-    internal class Persona
+    public class Persona
     {
-        private int _id;
-        private string _nombre;
-        private string _apellido;
-        private string _direccion;
-        private long _telefono;
-        private string _mail;
+        public int _id;
+        public string _nombre;
+        public string _apellido;
+        public string _direccion;
+        public long _telefono;
+        public string _mail;
 
         //public int Id { get => _id; set => _id = value; }
         //public string Nombre { get => _nombre; set => _nombre = value; }

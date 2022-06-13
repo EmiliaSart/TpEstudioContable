@@ -14,7 +14,24 @@ namespace EstudioContable.Entidades
         public int _periodo;
         public double _bruto;
         public double _descuentos;
-        public string _fechaAlta;
+        public DateTime _fechaAlta;
+
+        public Liquidacion()
+        {
+        }
+
+        public Liquidacion(int id, int idEmpleado, string codigoTransferencia, int periodo, double bruto, double descuentos, DateTime fechaAlta)
+        {
+            _id = id;
+            _idEmpleado = idEmpleado;
+            _codigoTransferencia = codigoTransferencia;
+            _periodo = periodo;
+            _bruto = bruto;
+            _descuentos = descuentos;
+            _fechaAlta = fechaAlta;
+        }
+
+
 
 
         //public int id { get => _id; set => _id = value; }
@@ -25,5 +42,12 @@ namespace EstudioContable.Entidades
         //public double Descuentos { get => _descuentos; set => _descuentos = value; }
         //public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
 
+
+
+        public override string ToString()
+        {
+            return _idEmpleado + " " + _periodo + " " + _codigoTransferencia + " " + _bruto.ToString() + " "
+                + _descuentos.ToString() + " " + _fechaAlta.ToString() + " " + _id.ToString();
+        }
     }
 }

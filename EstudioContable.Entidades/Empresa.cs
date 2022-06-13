@@ -11,14 +11,32 @@ namespace EstudioContable.Entidades
         public string _razonSocial;
         public int _cuit;
         public string _domicilio;
-        public string _fechaAlta;
+        public DateTime _fechaAlta;
         public int _usuario;
         public int _id;
-        
-        
-        
-        
-        
+
+        public Empresa()
+        {
+        }
+
+        public Empresa(string razonSocial, int cuit, string domicilio, DateTime fechaAlta, int usuario, int id)
+        {
+            _razonSocial = razonSocial;
+            _cuit = cuit;
+            _domicilio = domicilio;
+            _fechaAlta = fechaAlta;
+            _usuario = usuario;
+            _id = id;
+        }
+
+        public override string ToString()
+        {
+            return  _razonSocial + " " + _cuit.ToString() + " " + _domicilio + " " + _fechaAlta.ToString() + " " + _usuario + " " + _id;
+                
+        }
+
+
+
 
 
         //public int Id { get => _id; set => _id = value; }
